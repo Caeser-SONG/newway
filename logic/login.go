@@ -32,7 +32,7 @@ func Login(ctx *context.Context) {
 }
 
 func getsign(key string) string {
-	t := time.Now()
+	t := time.Now().Unix()
 	data := fmt.Sprintf("%s_%d", key, t)
 	has := md5.Sum([]byte(data))
 	return fmt.Sprintf("%x", has)
