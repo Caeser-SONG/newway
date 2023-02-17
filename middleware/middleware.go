@@ -15,9 +15,12 @@ type ErrorResp struct {
 
 func CheckAuth(ctx *context.Context) {
 	sign := ctx.GetCookie("sign")
-	key := redis.Get(sign)
+	r, err := redis.Get(sign)
+	if err != nil {
+		fmt.Println(r)
+		panic(err)
+	}
 
-	r := redis.Get(key.(string))
 	if r != nil {
 	} else {
 		resp := &ErrorResp{
