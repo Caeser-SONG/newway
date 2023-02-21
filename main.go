@@ -22,7 +22,5 @@ func InitAll() {
 func main() {
 	InitAll()
 	//web.AutoRouter(&UserController{})
-	logs.Warning("[aaaaa]", "vvv")
-
 	web.Run()
 }

@@ -15,14 +15,12 @@ type ErrorResp struct {
 
 func CheckAuth(ctx *context.Context) {
 	sign := ctx.GetCookie("sign")
-	r, err := redis.Get(sign)
-	if err != nil {
-		fmt.Println(r)
-		panic(err)
+	if len(sign) == 0 {
+		ctx.JSONResp("need a sign")
 	}
+	_, err := redis.Get(sign)
 
-	if r != nil {
-	} else {
+	if err != nil {
 		resp := &ErrorResp{
 			Erron:  101,
 			Errmsg: "auth error",
