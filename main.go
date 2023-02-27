@@ -21,6 +21,5 @@ func InitAll() {
 
 func main() {
 	InitAll()
-	//web.AutoRouter(&UserController{})
 	web.Run()
 }

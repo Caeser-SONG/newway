@@ -33,9 +33,6 @@ func InitRedis() {
 func Get(key string) (interface{}, error) {
 	conn := rpool.Get()
 	value, err := redis.String(conn.Do("Get", key))
-	if err != nil {
-		logs.Info(err)
-	}
 	return value, err
 }
 
