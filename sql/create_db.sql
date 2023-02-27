@@ -1,7 +1,8 @@
-CREATE TABLE COMPANY(
-   ID INT PRIMARY KEY     NOT NULL,
-   NAME           TEXT    NOT NULL,
-   AGE            INT     NOT NULL,
-   ADDRESS        CHAR(50),
-   SALARY         REAL
+CREATE TABLE USER_INFO(
+    ID INTEGER PRIMARY KEY     NOT NULL,
+    USERNAME      CHAR(50)     NOT NULL,
+    UID        CHAR(50)    NOT NULL,
+    SEX        CHAR(50)    NOT NULL,
+    AGE            INT     NOT NULL,
+    PHONE       CHAR(20)   NOT NULL
 );
